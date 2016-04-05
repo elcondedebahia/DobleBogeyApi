@@ -1,0 +1,14 @@
+{
+  "name": "doble-bogey-api",
+  "version": "0.0.0",
+  "description": "DobleBogeyApi",
+  "main": "server.js",
+  "author": {
+    "name": "cristian.conde",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "4.13.4",
+    "body-parser": "1.15.0"
+  }
+}
