@@ -30,6 +30,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="managers\jugadoresManager.js" />
+    <Compile Include="model\mongo.js" />
     <Compile Include="routes\jugadores.js" />
     <Compile Include="routes\resultados.js" />
     <Compile Include="server.js" />
@@ -44,22 +46,58 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="managers\" />
+    <Folder Include="model\" />
     <Folder Include="routes\" />
     <Folder Include="typings\" />
+    <Folder Include="typings\bluebird\" />
     <Folder Include="typings\body-parser\" />
     <Folder Include="typings\express-serve-static-core\" />
     <Folder Include="typings\express\" />
     <Folder Include="typings\mime\" />
+    <Folder Include="typings\mongoose\" />
     <Folder Include="typings\node\" />
     <Folder Include="typings\serve-static\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="typings\bluebird\bluebird.d.ts" />
+    <TypeScriptCompile Include="typings\bluebird\bluebird.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express-serve-static-core\express-serve-static-core.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
     <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\mongoose\mongoose.d.ts" />
+    <TypeScriptCompile Include="typings\mongoose\mongoose.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

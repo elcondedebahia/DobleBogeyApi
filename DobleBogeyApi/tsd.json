@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "513510a89acc648422c9abb047265116198f99ee"
+      "commit": "94d8775a947f626269b06ccadd6f5e61839389d0"
     },
     "express-serve-static-core/express-serve-static-core.d.ts": {
       "commit": "513510a89acc648422c9abb047265116198f99ee"
@@ -22,6 +22,12 @@
     },
     "express/express.d.ts": {
       "commit": "513510a89acc648422c9abb047265116198f99ee"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "94d8775a947f626269b06ccadd6f5e61839389d0"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "94d8775a947f626269b06ccadd6f5e61839389d0"
     }
   }
 }
