@@ -1,9 +1,11 @@
-﻿
-var express = require('express');        // call express
+﻿var express = require('express');        // call express
 var app = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var resultados = require('./routes/resultados');
 var jugadores = require('./routes/jugadores');
+var tarjetas = require('./routes/tarjetas');
+var mongoose = require("mongoose");
+mongoose.connect('mongodb://nyandoo.cloudapp.net:27017/DobleBogey');
 
 // configure app to use bodyParser() this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,6 +26,7 @@ router.get('/', function (req, res) {
 app.use('/api', router);
 app.use('/resultados', resultados);
 app.use('/jugadores', jugadores);
+app.use('/tarjetas', tarjetas);
 
 // START THE SERVER
 // =============================================================================

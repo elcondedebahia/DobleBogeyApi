@@ -31,9 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="managers\jugadoresManager.js" />
+    <Compile Include="managers\tarjetasManager.js" />
     <Compile Include="model\mongo.js" />
+    <Compile Include="model\tarjeta.js" />
     <Compile Include="routes\jugadores.js" />
     <Compile Include="routes\resultados.js" />
+    <Compile Include="routes\tarjetas.js" />
     <Compile Include="server.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
