@@ -9,6 +9,14 @@ router.use(function timeLog(req, res, next) {
     next();
 });
 
+router.get('/', function (req, res) {
+    tarjetasManager.getAll().then(function (items) {
+        res.send(items);
+    }).catch(function (error) {
+        console.log(error);
+    });
+});
+
 router.post('/', function (req, res) {
     var tarjeta = {};
     tarjeta.player = req.body.player;

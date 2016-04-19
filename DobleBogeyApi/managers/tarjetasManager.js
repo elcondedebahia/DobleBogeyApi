@@ -1,11 +1,28 @@
 ﻿var Promise = require('bluebird');
 var mongoOp = require("../model/tarjeta");
 
+var getAll = function () {
+
+    return new Promise(function (resolve, reject) {
+
+        mongoOp.find({})
+            .populate('_player') // space delimited path names
+            .exec(function (err, data) {
+
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                };
+            });
+    });
+};
+
 var insert = function (tarjeta) {
     return new Promise(function (resolve, reject) {
         var db = new mongoOp();
 
-        //db.player = tarjeta.player;
+        db._player = tarjeta.player;
         //db.torneo = tarjeta.torneo;
         db.handicap = tarjeta.handicap;
         db.score = tarjeta.score;
@@ -44,5 +61,6 @@ var getById = function (id) {
     });
 };
 
+module.exports.getAll = getAll;
 module.exports.insert = insert;
 module.exports.getById = getById;

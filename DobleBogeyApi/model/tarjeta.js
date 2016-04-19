@@ -4,7 +4,7 @@
 var mongoSchema = mongoose.Schema;
 
 var tarjetaSchema = {
-    //_player: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    _player: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     //_torneo: { type: mongoose.Schema.Types.ObjectId, ref: 'Torneo' },
     handicap: Number,
     score: []
