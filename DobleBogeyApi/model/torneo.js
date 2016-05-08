@@ -3,12 +3,17 @@
 // create instance of Schema
 var mongoSchema = mongoose.Schema;
 
-var tarjetaSchema = {
+var Tarjeta = new mongoose.Schema({
     _player: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    //_torneo: { type: mongoose.Schema.Types.ObjectId, ref: 'Torneo' },
     handicap: Number,
     score: []
+});
+
+var torneoSchema = {
+    nombre: String,
+    fecha: Date,
+    tarjetas: [Tarjeta],
 };
 
 // create model if not exists.
-module.exports = mongoose.model('Tarjeta', tarjetaSchema);
+module.exports = mongoose.model('Torneo', torneoSchema);

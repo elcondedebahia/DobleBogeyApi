@@ -1,5 +1,6 @@
 ﻿var Promise = require('bluebird');
 var mongoOp = require("../model/mongo");
+var mongoose = require("mongoose");
 
 var getAll = function () {
 
@@ -18,20 +19,31 @@ var getAll = function () {
 
 var insert = function (user) {
     return new Promise(function (resolve, reject) {
-        var db = new mongoOp();
 
-        db.userFirstName = user.firstName;
-        db.userLastName = user.lastName; 
-        db.userEmail = user.email; 
-        db.userPassword = user.password;
+        var db = mongoose.model('User');
 
-        db.save(function (err) {
+        var usuario = {};
+        usuario.userFirstName = user.firstName;
+        usuario.userLastName = user.lastName;
+        usuario.userEmail = user.email;
+        usuario.userPhone = user.phone;
+        usuario.userHandicap = user.handicap;
+        usuario.userPassword = user.password;
+
+        if (!user._id) {
+            user._id = new mongoose.mongo.ObjectID();
+        }
+
+        db.findByIdAndUpdate(user._id, usuario, { upsert: true }, function (err) {
             if (err) {
                 reject({ "error": true, "message": "Error adding data" });
             } else {
                 resolve({ "error": false, "message": "Data added" });
             }
         });
+
+
+        resolve();
     });
 }
 

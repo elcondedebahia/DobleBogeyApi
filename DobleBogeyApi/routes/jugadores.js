@@ -21,6 +21,8 @@ router.post('/', function (req, res) {
     var user = {};
     user.firstName = req.body.firstName;
     user.lastName = req.body.lastName;
+    user.handicap = req.body.handicap;
+    user.phone = req.body.phone;
     user.email = req.body.email;
     user.password = req.body.password;
 

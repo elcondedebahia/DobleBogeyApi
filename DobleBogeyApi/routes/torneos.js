@@ -1,7 +1,7 @@
 ﻿var express = require('express');
 var app = express();
 var router = express.Router();
-var tarjetasManager = require('../managers/tarjetasManager');
+var torneosManager = require('../managers/torneoManager');
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
@@ -10,7 +10,7 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/', function (req, res) {
-    tarjetasManager.getAll().then(function (items) {
+    torneosManager.getAll().then(function (items) {
         res.send(items);
     }).catch(function (error) {
         console.log(error);
@@ -18,13 +18,11 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-    var tarjeta = {};
-    tarjeta.player = req.body.player;
-    tarjeta.torneo = req.body.torneo;
-    tarjeta.handicap = req.body.handicap;
-    tarjeta.score = req.body.score;
+    var torneo = {};
+    torneo.nombre = req.body.nombre;
+    torneo.fecha = req.body.fecha;
 
-    tarjetasManager.insert(tarjeta).then(function (data) {
+    torneosManager.insert(torneo).then(function (data) {
         res.send(data);
     }).catch(function (error) {
         console.log(error);
@@ -32,8 +30,16 @@ router.post('/', function (req, res) {
     });
 });
 
-router.get('/:tarjetaId', function (req, res) {
-    res.json({ message: 'Informacion de la tarjeta Id' });
+router.get('/:torneoId', function (req, res) {
+    
+    var torneoId = req.params.torneoId;
+
+    torneosManager.getById(torneoId).then(function (data) {
+        res.send(data);
+    }).catch(function (error) {
+        console.log(error);
+        res.send(error);
+    });
 });
 
 

@@ -5,12 +5,13 @@
   "main": "server.js",
   "author": {
     "name": "cristian.conde",
-    "email": ""
+    "email": "cristianconde@gmail.com"
   },
   "dependencies": {
     "express": "4.13.4",
     "body-parser": "1.15.0",
     "mongoose": "4.4.12",
-    "bluebird": "3.3.5"
+    "bluebird": "3.3.5",
+    "cors" : "2.7.1"
   }
 }

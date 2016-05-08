@@ -1,12 +1,11 @@
 ﻿var Promise = require('bluebird');
-var mongoOp = require("../model/tarjeta");
+var torneoModel = require("../model/torneo");
 
 var getAll = function () {
 
     return new Promise(function (resolve, reject) {
 
-        mongoOp.find({})
-            .populate('_player') // space delimited path names
+        torneoModel.find({})
             .exec(function (err, data) {
 
                 if (err) {
@@ -18,21 +17,19 @@ var getAll = function () {
     });
 };
 
-var insert = function (tarjeta) {
+var insert = function (torneo) {
     return new Promise(function (resolve, reject) {
-        var db = new mongoOp();
+        var db = new torneoModel();
 
-        db._player = tarjeta.player;
-        //db.torneo = tarjeta.torneo;
-        db.handicap = tarjeta.handicap;
-        db.score = tarjeta.score;
+        db.nombre = torneo.nombre;
+        db.fecha = torneo.fecha;
 
-        db.save(function (err) {
+        db.save(function (err, torneo) {
             if (err) {
                 console.log(err);
                 reject({ "error": true, "message": "Error adding data" });
             } else {
-                resolve({ "error": false, "message": "Data added" });
+                resolve({ "error": false, "message": torneo._id });
             }
         });
     });
@@ -44,11 +41,7 @@ var getById = function (id) {
 
     return new Promise(function (resolve, reject) {
 
-        mongoClient.connect(url, function (err, db) {
-
-            var collection = db.collection('articles');
-
-            collection.findOne({ '_id': id }, function (err, item) {
+        torneoModel.findOne({ '_id': id }, function (err, item) {
 
                 if (err) {
                     reject(err);
@@ -57,8 +50,7 @@ var getById = function (id) {
                 };
 
             });
-        });
-    });
+        })
 };
 
 module.exports.getAll = getAll;
